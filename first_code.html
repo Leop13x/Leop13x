@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+
+<script>
+	function pula() {    	
+    	document.write("<br>");
+	}
+
+	function mostra(frase) {
+    	document.write("<h3>" + frase);
+    	pula();
+	}
+
+	function calculaImc(altura, peso) {
+    	return peso / (altura * altura);
+	}
+
+	var nome = prompt("Informe seu nome:")
+	var alturaInformada = prompt(nome + ", Informe sua altura, ex: '1.68':");
+	var pesoInformado = prompt(nome + ", Informe seu peso:");
+	var imc = calculaImc(alturaInformada, pesoInformado);
+
+	document.write("<h1><br>" + nome + ", o seu IMC é: " + imc + "</h1>");
+
+	if(imc < 18.5) {
+		document.write("<h2>Estado de Desnutrição<br>");
+	}
+
+	if(imc >= 18.5 && imc <= 24.5) {
+		document.write("<h2>Estado Normal<br>");
+	}
+
+	if(imc >= 25 && imc <= 29.9) {	
+		document.write("<h2>Estado de Sobrepeso<br>");
+	}
+		
+	if(imc >= 30 && imc <= 39.9) {	
+		document.write("<h2>Estado de Obesidade<br>");
+	}
+
+	if(imc >= 40) {
+		document.write("<h2>Estado de Obesidade Mórbida<br>");
+	}
+	document.write("----------------------------------------------------------------------------")
+	mostra("- Abaixo de 18,5 = desnutrição<br>");
+	mostra("- Entre 18,5 e 24,5 = peso normal<br>");
+	mostra("- Entre 25,0 e 29,9 = sobrepeso<br>");
+	mostra("- Entre 30,0 e 39,9 = Obesidade<br>");
+	mostra("- Acima de 40,0 = Obesidade Mórbida<br>")
+
+</script>
